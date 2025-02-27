@@ -1,10 +1,10 @@
-# JS-Iteration-Methods-Part2
+# TS-Iteration-Methods-Part2
 
 ## Instructions
 
-- Fork and clone [this repository](https://github.com/JoinCODED/JS-Iteration-Methods-Part2) to your `Development` folder.
+- Fork and clone [this repository](https://github.com/JoinCODED/TS-Iteration-Methods-Part2) to your `Development` folder.
   - ```bash
-    git clone git@github.com:<your_username>/JS-Iteration-Methods-Part2.git
+    git clone git@github.com:<your_username>/TS-Iteration-Methods-Part2.git
     ```
 
 ### Running The Tests
