@@ -1,13 +1,14 @@
-const {
-  filterIncomeTransactions,
-  filterExpenseTransactions,
-  calculateTotalIncome,
-  calculateTotalExpenses,
+import {
+  Transaction,
   calculateNetTotal,
+  calculateTotalExpenses,
+  calculateTotalIncome,
+  filterExpenseTransactions,
+  filterIncomeTransactions,
   filterSignificantTransactions,
-} = require("./iterationMethods.js");
+} from "./transactions";
 
-const transactions = [
+const transactions: Transaction[] = [
   ["income", 1000],
   ["income", 1500],
   ["expense", 500],
