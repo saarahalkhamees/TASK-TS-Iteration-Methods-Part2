@@ -16,7 +16,7 @@ const transactions: Transaction[] = [
   ["income", 700],
 ];
 
-describe("Financial Transaction Analysis", () => {
+describe("Transactions", () => {
   describe("Transaction Analysis", () => {
     describe("filterIncomeTransactions", () => {
       it("should filter only income transactions", () => {
