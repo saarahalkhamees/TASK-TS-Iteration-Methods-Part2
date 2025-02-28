@@ -6,7 +6,7 @@ import {
   filterExpenseTransactions,
   filterIncomeTransactions,
   filterSignificantTransactions,
-} from "./transactions";
+} from "../transactions";
 
 const transactions: Transaction[] = [
   ["income", 1000],
