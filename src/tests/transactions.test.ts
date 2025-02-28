@@ -60,12 +60,21 @@ describe("Transactions", () => {
     });
 
     describe("filterSignificantTransactions", () => {
-      it("should filter transactions above or equal to $500", () => {
-        expect(filterSignificantTransactions(transactions)).toEqual([
+      it("should filter transactions above or equal to provided threshold of $500", () => {
+        expect(filterSignificantTransactions(transactions, 500)).toEqual([
           ["income", 1000],
           ["income", 1500],
           ["expense", 500],
           ["income", 700],
+        ]);
+      });
+    });
+
+    describe("filterSignificantTransactions", () => {
+      it("should filter transactions above or equal to provided threshold of $1000", () => {
+        expect(filterSignificantTransactions(transactions, 1000)).toEqual([
+          ["income", 1000],
+          ["income", 1500],
         ]);
       });
     });
