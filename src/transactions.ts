@@ -1,6 +1,6 @@
 // don't edit or remove the type declaration
 type TransactionType = "income" | "expense";
-export type Transaction = [TransactionType, number];
+type Transaction = [TransactionType, number];
 
 /**
  * You can use this array to
@@ -14,7 +14,7 @@ const transactions: Transaction[] = [
   ["income", 700],
 ];
 
-// 1) Using `filterIncomeTransactions` function that:
+// `filterIncomeTransactions` function that:
 // - Accepts a "transactions" parameter of type "Transaction[]".
 // - Returns a new array containing only the income transactions.
 // example:
@@ -25,7 +25,7 @@ function filterIncomeTransactions(transactions: Transaction[]): Transaction[] {
   return []; // replace empty array with what you see is fit
 }
 
-// 2) Using `filterExpenseTransactions` function that:
+// `filterExpenseTransactions` function that:
 // - Accepts a "transactions" parameter of type "Transaction[]".
 // - Return a new array containing only the expense transactions.
 // example:
@@ -36,7 +36,7 @@ function filterExpenseTransactions(transactions: Transaction[]): Transaction[] {
   return []; // replace empty array with what you see is fit
 }
 
-// 3) Using `calculateTotalIncome` function that:
+// `calculateTotalIncome` function that:
 // - Accepts a "transactions" parameter of type "Transaction[]".
 // - calculates the total income and returns it.
 // example:
@@ -47,7 +47,7 @@ function calculateTotalIncome(transactions: Transaction[]): number {
   return -1; // replace -1 with what you see is fit
 }
 
-// 4) Using `calculateTotalExpenses` function that:
+// `calculateTotalExpenses` function that:
 // - Accepts a "transactions" parameter of type "Transaction[]".
 // - calculates the total expense and returns it.
 // example:
@@ -58,7 +58,7 @@ function calculateTotalExpenses(transactions: Transaction[]): number {
   return -1; // replace -1 with what you see is fit
 }
 
-// 5) Using `calculateNetTotal` function that:
+// `calculateNetTotal` function that:
 // - Accepts a "transactions" parameter of type "Transaction[]".
 // - calculates the net total (total income - total expenses) and returns it.
 // example:
@@ -69,7 +69,7 @@ function calculateNetTotal(transactions: Transaction[]): number {
   return -1; // replace -1 with what you see is fit
 }
 
-// 6) Using `filterSignificantTransactions` function that:
+// `filterSignificantTransactions` function that:
 // - Accepts 2 parameters:
 // - a "transactions" parameter of type "Transaction[]".
 // - a "threshold" parameter of type "number"
@@ -86,6 +86,7 @@ function filterSignificantTransactions(
 }
 
 export {
+  Transaction,
   filterIncomeTransactions,
   filterExpenseTransactions,
   calculateTotalIncome,
