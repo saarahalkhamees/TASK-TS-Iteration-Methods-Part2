@@ -1,3 +1,5 @@
+import { faker } from "@faker-js/faker";
+
 import {
   Transaction,
   calculateNetTotal,
@@ -60,13 +62,18 @@ describe("Transactions", () => {
     });
 
     describe("filterSignificantTransactions", () => {
-      it("should filter transactions above or equal to $500", () => {
-        expect(filterSignificantTransactions(transactions)).toEqual([
-          ["income", 1000],
-          ["income", 1500],
-          ["expense", 500],
-          ["income", 700],
-        ]);
+      const threshold = faker.number.int({ min: 500, max: 1000 });
+
+      it(`should filter transactions above or equal to provided threshold of $${threshold}`, () => {
+        let expectedTransactions = [];
+
+        for (let transaction of transactions)
+          if (transaction[1] > threshold)
+            expectedTransactions.push(transaction);
+
+        expect(filterSignificantTransactions(transactions, threshold)).toEqual(
+          expectedTransactions
+        );
       });
     });
   });
