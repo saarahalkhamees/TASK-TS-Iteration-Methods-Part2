@@ -22,7 +22,9 @@ const transactions: Transaction[] = [
 function filterIncomeTransactions(transactions: Transaction[]): Transaction[] {
   // write your code here...
 
-  return []; // replace empty array with what you see is fit
+  return transactions.filter((transaction: Transaction) =>
+    transaction.includes("income")
+  ); // replace empty array with what you see is fit
 }
 
 // `filterExpenseTransactions` function that:
@@ -32,8 +34,9 @@ function filterIncomeTransactions(transactions: Transaction[]): Transaction[] {
 // filterExpenseTransactions(transactions); // => [["expense", 500], ["expense", 300]]
 function filterExpenseTransactions(transactions: Transaction[]): Transaction[] {
   // write your code here...
-
-  return []; // replace empty array with what you see is fit
+  return transactions.filter((transactions: Transaction) =>
+    transactions.includes("expense")
+  ); // replace empty array with what you see is fit
 }
 
 // `calculateTotalIncome` function that:
@@ -43,8 +46,10 @@ function filterExpenseTransactions(transactions: Transaction[]): Transaction[] {
 // calculateTotalIncome(transactions); // => 3200  (1000 + 1500 + 700)
 function calculateTotalIncome(transactions: Transaction[]): number {
   // write your code here...
-
-  return -1; // replace -1 with what you see is fit
+  return transactions
+    .filter((transaction: Transaction) => transaction[0] === "income")
+    .reduce((sum, transaction) => sum + transaction[1], 0);
+  // <- fix: add the income amount
 }
 
 // `calculateTotalExpenses` function that:
@@ -55,7 +60,11 @@ function calculateTotalIncome(transactions: Transaction[]): number {
 function calculateTotalExpenses(transactions: Transaction[]): number {
   // write your code here...
 
-  return -1; // replace -1 with what you see is fit
+  return transactions
+    .filter((transaction: Transaction) => transaction[0] === "expense")
+    .reduce((sum, transaction) => sum + transaction[1], 0);
+
+  // replace -1 with what you see is fit
 }
 
 // `calculateNetTotal` function that:
@@ -65,8 +74,10 @@ function calculateTotalExpenses(transactions: Transaction[]): number {
 // calculateNetTotal(transactions); // => 2400  (3200 - 800)
 function calculateNetTotal(transactions: Transaction[]): number {
   // write your code here...
-
-  return -1; // replace -1 with what you see is fit
+  let calculation: number = 0;
+  calculation =
+    calculateTotalIncome(transactions) - calculateTotalExpenses(transactions);
+  return calculation; // replace -1 with what you see is fit
 }
 
 // `filterSignificantTransactions` function that:
@@ -81,6 +92,9 @@ function filterSignificantTransactions(
   threshold: number
 ): Transaction[] {
   // write your code here...
+  return transactions.filter(
+    (transaction: Transaction) => transaction[1] >= threshold
+  );
 
   return []; // replace empty array with what you see is fit
 }
